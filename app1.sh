@@ -1,20 +1,12 @@
 #!/bin/bash
 install()
 {
-        sudo apt install npm -y
-        if [ $? -ne 0 ]
-        then
-                echo " npm installation unsucessful"
-        else
-                echo "npm installed successfully"
-        fi
-        sudo apt install awscli -y
-        if [ $? -ne 0 ]
-        then
-                echo " awscli installation unsucessful"
-         else
-                echo "awscli installed successfully"
-        fi
+        sudo apt-get update
+    sudo apt-get -y install awscli 
+    if [ $? -ne 0 ]; then
+       echo "error while installing awscli"
+    fi
+    echo "awscli installed successfully"
 
         sudo apt install netcat -y
         if [ $? -ne 0 ]
